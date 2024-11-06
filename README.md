@@ -94,31 +94,34 @@ Benchmark framework for persistent indexes.
 Usage:
   PiBench [OPTION...] INPUT
 
-      --input arg         Absolute path to library file
-  -n, --records arg       Number of records to load (default: 1000000)
-  -p, --operations arg    Number of operations to execute (default: 1000000)
-  -t, --threads arg       Number of threads to use (default: 1)
-  -f, --key_prefix arg    Prefix string prepended to every key (default: )
-  -k, --key_size arg      Size of keys in Bytes (without prefix) (default: 4)
-  -v, --value_size arg    Size of values in Bytes (default: 4)
-  -r, --read_ratio arg    Ratio of read operations (default: 1)
-  -i, --insert_ratio arg  Ratio of insert operations (default: 0)
-  -u, --update_ratio arg  Ratio of update operations (default: 0)
-  -d, --remove_ratio arg  Ratio of remove operations (default: 0)
-  -s, --scan_ratio arg    Ratio of scan operations (default: 0)
-      --scan_size arg     Number of records to be scanned. (default: 100)
-      --sampling_ms arg   Sampling window in milliseconds (default: 1000)
-      --distribution arg  Key distribution to use (default: UNIFORM)
-      --skew arg          Key distribution skew factor to use (default: 0.2)
-      --seed arg          Seed for random generators (default: 1729)
-      --mode arg          Time based or operation based mode (default:operation)
-      --seconds arg       Benchmark duration in seconds under the time-based mode
-      --pcm               Turn on Intel PCM (default: true)
-      --pool_path arg     Path to persistent pool (default: )
-      --pool_size arg     Size of persistent pool (in Bytes) (default: 0)
-      --skip_load             Skip the load phase
-      --latency_sampling arg  Sample latency of requests (default: 0)
-      --help              Print help
+      --input arg               Absolute path to library file
+  -c, --protocol arg            Concurrency Control Protocol (0 is Mono, 1 is ORWC 2 is OLC)
+  -x, --clock arg               Clock type (0 is Optimistic, 1 is Sync, 3 is Free)
+  -g, --garbage_collector arg   Garbage Collector (0 Disabled, 1 Enabled)
+  -n, --records arg             Number of records to load (default: 1000000)
+  -p, --operations arg          Number of operations to execute (default: 1000000)
+  -t, --threads arg             Number of threads to use (default: 1)
+  -f, --key_prefix arg          Prefix string prepended to every key (default: )
+  -k, --key_size arg            Size of keys in Bytes (without prefix) (default: 4)
+  -v, --value_size arg          Size of values in Bytes (default: 4)
+  -r, --read_ratio arg          Ratio of read operations (default: 1)
+  -i, --insert_ratio arg        Ratio of insert operations (default: 0)
+  -u, --update_ratio arg        Ratio of update operations (default: 0)
+  -d, --remove_ratio arg        Ratio of remove operations (default: 0)
+  -s, --scan_ratio arg          Ratio of scan operations (default: 0)
+      --scan_size arg           Number of records to be scanned. (default: 100)
+      --sampling_ms arg         Sampling window in milliseconds (default: 1000)
+      --distribution arg        Key distribution to use (default: UNIFORM)
+      --skew arg                Key distribution skew factor to use (default: 0.2)
+      --seed arg                Seed for random generators (default: 1729)
+      --mode arg                Time based or operation based mode (default:operation)
+      --seconds arg             Benchmark duration in seconds under the time-based mode
+      --pcm                     Turn on Intel PCM (default: true)
+      --pool_path arg           Path to persistent pool (default: )
+      --pool_size arg           Size of persistent pool (in Bytes) (default: 0)
+      --skip_load               Skip the load phase
+      --latency_sampling arg    Sample latency of requests (default: 0)
+      --help                    Print help
 ```
 The tree data structure implemented as a shared library must follow the API defined in [`tree_api.hpp`](include/tree_api.hpp).
 An example can be found under [`wrappers/stlmap`](wrappers/stlmap)
