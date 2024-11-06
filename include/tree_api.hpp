@@ -25,6 +25,9 @@ struct tree_options_t
     std::string pool_path = "";
     size_t pool_size = 0;
     size_t num_threads = 1;
+    uint8_t protocol = 0;
+    uint8_t clock_type = 0;
+    uint8_t gc_enabled = 0;
 };
 
 class tree_api;

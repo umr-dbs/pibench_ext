@@ -61,3 +61,21 @@ endif(PIBENCH_BUILD_LEVELDB)
 # Example libraries
 add_library(dummy_wrapper SHARED wrappers/dummy/dummy_wrapper.cpp)
 add_library(stlmap_wrapper SHARED wrappers/stlmap/stlmap_wrapper.cpp)
+
+#add_library(mvbtree_wrapper SHARED wrappers/mvbtree/mvbtree_wrapper.cpp
+#        wrappers/mvbtree/mvbtree_wrapper.h)
+
+add_library(mvbtree_gc_wrapper SHARED wrappers/mvbtree_gc/mvbtree_gc_wrapper.cpp
+        wrappers/mvbtree_gc/mvbtree_gc_wrapper.h)
+
+#target_link_libraries(mvbtree_wrapper
+#        /home/amir/RustroverProjects/MV-BPlusTree/target/release/libmv_b_tree.so)
+#
+target_link_libraries(mvbtree_gc_wrapper
+        /home/amir/RustroverProjects/MV-BPlusTree/target/release/libmv_b_tree.so)
+
+add_library(dexabtree_wrapper SHARED wrappers/dexabtree/dexabtree_wrapper.cpp
+        wrappers/dexabtree/dexabtree_wrapper.h)
+
+target_link_libraries(dexabtree_wrapper
+        /home/amir/CLionProjects/CC-BPlusTree/target/release/libcc_bplustree.so)

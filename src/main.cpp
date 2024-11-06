@@ -25,6 +25,9 @@ int main(int argc, char** argv)
             .show_positional_help();
 
         options.add_options()
+            ("c,protocol", "Concurrency Control Protocol 0 Mono 1 ORWC 2 OLC", cxxopts::value<uint8_t>()->default_value(std::to_string(tree_opt.protocol)))
+            ("x,clock", "Clock type 0 Opt 1 Sync 3 Free", cxxopts::value<uint8_t>()->default_value(std::to_string(tree_opt.clock_type)))
+            ("g,garbage_collector", "Garbage Collector 0 Disabled 1 Enabled", cxxopts::value<uint8_t>()->default_value(std::to_string(tree_opt.gc_enabled)))
             ("input", "Absolute path to library file", cxxopts::value<std::string>())
             ("n,records", "Number of records to load", cxxopts::value<uint64_t>()->default_value(std::to_string(opt.num_records)))
             ("p,operations", "Number of operations to execute", cxxopts::value<uint64_t>()->default_value(std::to_string(opt.num_ops)))
@@ -85,6 +88,21 @@ int main(int argc, char** argv)
             std::cout << "Missing 'input' argument." << std::endl;
             std::cout << options.help() << std::endl;
             exit(0);
+        }
+
+        if (result.count("protocol")) {
+            tree_opt.protocol = result["protocol"].as<uint8_t>();
+            opt.protocol = tree_opt.protocol;
+        }
+
+        if(result.count("clock")) {
+            tree_opt.clock_type = result["clock"].as<uint8_t>();
+            opt.clock = tree_opt.clock_type;
+        }
+
+        if (result.count("garbage_collector")) {
+            tree_opt.gc_enabled = result["garbage_collector"].as<uint8_t>();
+            opt.gc = tree_opt.gc_enabled;
         }
 
         // Parse "num_records"

@@ -1,0 +1,1 @@
+/usr/bin/c++  -march=native -O3 -DNDEBUG "CMakeFiles/pibench-bin.dir/main.cpp.o" -o PiBench  libpibench.a -fopenmp /home/amir/CLionProjects/pibench/pcm/libPCM.a -ldl

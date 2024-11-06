@@ -1,0 +1,1 @@
+/usr/bin/c++  -march=native -g CMakeFiles/PiBenchTests.dir/test_key_generator.cpp.o CMakeFiles/PiBenchTests.dir/test_value_generator.cpp.o -o PiBenchTests  ../src/libpibench.a ../lib/libgtestd.a ../lib/libgtest_maind.a -fopenmp /home/amir/CLionProjects/pibench/pcm/libPCM.a -ldl ../lib/libgtestd.a

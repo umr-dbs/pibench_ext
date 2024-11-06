@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -march=native -g -shared -Wl,-soname,libmvbtree_gc_wrapper.so -o libmvbtree_gc_wrapper.so CMakeFiles/mvbtree_gc_wrapper.dir/wrappers/mvbtree_gc/mvbtree_gc_wrapper.cpp.o   -L/home/amir/RustroverProjects/MV-BPlusTree/target/release  -Wl,-rpath,/home/amir/RustroverProjects/MV-BPlusTree/target/release -lmv_b_tree

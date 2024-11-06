@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -march=native -O3 -DNDEBUG -shared -Wl,-soname,libdexabtree_wrapper.so -o libdexabtree_wrapper.so CMakeFiles/dexabtree_wrapper.dir/wrappers/dexabtree/dexabtree_wrapper.cpp.o  -Wl,-rpath,/home/amir/CLionProjects/CC-BPlusTree/target/release /home/amir/CLionProjects/CC-BPlusTree/target/release/libcc_bplustree.so

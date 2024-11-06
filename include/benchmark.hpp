@@ -44,6 +44,10 @@ enum class distribution_t : uint8_t
  */
 struct options_t
 {
+    uint8_t gc = 0;
+    uint8_t protocol = 0;
+    uint8_t clock = 0;
+
     /// Name of tree library file used to run the benchmark against.
     std::string library_file = "";
 

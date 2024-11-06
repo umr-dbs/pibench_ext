@@ -594,11 +594,45 @@ std::ostream& operator<<(std::ostream& os, const PiBench::distribution_t& dist)
 
 std::ostream& operator<<(std::ostream& os, const PiBench::options_t& opt)
 {
+    auto protocol = "";
+    auto clock = "";
+    auto gc = "";
+
+    if (opt.protocol == 0) {
+        protocol = "MonoWriter";
+    }
+    else if(opt.protocol == 1) {
+        protocol = "ORWC";
+    }
+    else  {
+        protocol = "OLC";
+    }
+
+    if (opt.clock == 0) {
+        clock = "Optimistic";
+    }
+    else if (opt.clock == 1) {
+        clock = "Synced";
+    }
+    else {
+        clock = "Free";
+    }
+
+    if (opt.gc == 1) {
+        gc = "Enabled";
+    }
+    else {
+        gc = "Disabled";
+    }
+
     os << "Benchmark Options:"
        << "\n"
        << "\tTarget: " << opt.library_file << "\n"
        << "\t# Records: " << opt.num_records << "\n"
        << "\t# Threads: " << opt.num_threads << "\n"
+       << "\t# Protocol: " << protocol << "\n"
+       << "\t# Clock: " << clock << "\n"
+       << "\t# Garbage Collector: " << gc << "\n"
        << (opt.bm_mode == PiBench::mode_t::Operation ? "\t# Operations: " : "\tDuration (s): ") << (opt.bm_mode == PiBench::mode_t::Operation ? opt.num_ops : opt.seconds) << "\n"
        << "\tSampling: " << opt.sampling_ms << " ms\n"
        << "\tLatency: " << opt.latency_sampling << "\n"

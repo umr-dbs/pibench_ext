@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -march=native -g -shared -Wl,-soname,libstlmap_wrapper.so -o libstlmap_wrapper.so CMakeFiles/stlmap_wrapper.dir/wrappers/stlmap/stlmap_wrapper.cpp.o

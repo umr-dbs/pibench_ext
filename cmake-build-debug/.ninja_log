@@ -1,0 +1,11 @@
+# ninja log v5
+10	243	1718734455690030648	src/CMakeFiles/pibench.dir/value_generator.cpp.o	427a4e63d3999495
+10	254	1718734455702030646	src/CMakeFiles/pibench.dir/operation_generator.cpp.o	5996c9831ad3304f
+9	181	1718734455626030653	src/CMakeFiles/pibench.dir/library_loader.cpp.o	bef0a032d0eeb70a
+2699	2841	1718734458282030455	src/libpibench.a	1473e6bbfebc2b0c
+9	254	1718734455702030646	src/CMakeFiles/pibench.dir/key_generator.cpp.o	cbac8c93147e4340
+0	9	0	libPCM.a	18a7e1f3af0abad3
+0	9	0	/home/amir/CLionProjects/pibench/cmake-build-debug/libPCM.a	18a7e1f3af0abad3
+3255	3469	1718734458910030407	src/PiBench	1ae6e55ada5a3fac
+10	2699	1718734458138030465	src/CMakeFiles/pibench.dir/benchmark.cpp.o	2af46284f98ea297
+10	3255	1718734458690030424	src/CMakeFiles/pibench-bin.dir/main.cpp.o	509ec8676f765eb5
